@@ -9,8 +9,6 @@ set(ref(db, 'users/' + userId), {
 });
 }
 
-writeUserData('userId', 'test', 'email', 'imageUrl')
-
 const elements = {
     a1: document.querySelector('.a1'),
     a2: document.querySelector('.a2'),
@@ -22,9 +20,6 @@ const elements = {
     c2: document.querySelector('.c2'),
     c3: document.querySelector('.c3')
 }
-
-import { getDatabase, ref, set } from "firebase/database";
-const database = getDatabase();
 
 const dialog = document.querySelector('.dialog');
 const restart = document.querySelector('.restart');
@@ -82,6 +77,7 @@ function visibleDialog (result) {
 
 function restartGame() {
     ['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3'].forEach(id => elements[id].innerText = "");
+    writeUserData('userId', 'test', 'email', 'imageUrl');
     visibleDialog()
 }
 
@@ -95,13 +91,3 @@ function aiMove() {
         setTimeout(verifyWin, 500);
     }
 }
-
-var userData = {
-    nome: "Nome do Usuário",
-    email: "usuario@email.com",
-    perfil: "https://linkdoperfil.com/imagem.jpg"
-};
-
-var ref = firebase.database().ref("usuarios");
-
-ref.child("usuarioID").set(userData);
