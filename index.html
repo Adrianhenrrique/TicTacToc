@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Da Velha</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header><h1>Jogo Da Velha</h1></header>
+    <section>
+        <header class="content">
+            <div onclick="chagerCaracter('a1')"><h2 class="a1"></h2></div>
+            <div onclick="chagerCaracter('a2')"><h2 class="a2"></h2></div>
+            <div onclick="chagerCaracter('a3')"><h2 class="a3"></h2></div>
+            <div onclick="chagerCaracter('b1')"><h2 class="b1"></h2></div>
+            <div onclick="chagerCaracter('b2')"><h2 class="b2"></h2></div>
+            <div onclick="chagerCaracter('b3')"><h2 class="b3"></h2></div>
+            <div onclick="chagerCaracter('c1')"><h2 class="c1"></h2></div>
+            <div onclick="chagerCaracter('c2')"><h2 class="c2"></h2></div>
+            <div onclick="chagerCaracter('c3')"><h2 class="c3"></h2></div>
+        </header>
+        <div class="dialog">
+            <h1 class="title">Resultado da partida</h1>
+            <h2 class="result"></h2>
+            <p class="text">Ganhou a partida</p>
+            <img class="icon" src="./confete.gif" alt="emoji anidamdo de confete estorando"/>
+
+            <button onclick="restartGame()" class="restart">Continuar</button>
+        </div>
+        <button onclick="startGame()" class="start">START</button>
+    </section>
+    <footer><h2></h2></footer>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyD_-w4OdPOsapkNPoCN7l7N84pJ4hPq82g",
+            authDomain: "tictactoc-713ee.firebaseapp.com",
+            databaseURL: "https://tictactoc-713ee-default-rtdb.firebaseio.com",
+            projectId: "tictactoc-713ee",
+            storageBucket: "tictactoc-713ee.appspot.com",
+            messagingSenderId: "487091919595",
+            appId: "1:487091919595:web:0c2028cbbec59371cdbcae",
+            measurementId: "G-43XYF878D6"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        
+    </script>
+    <script src="./index.js"></script>
+</body>
+</html>
